@@ -1,0 +1,52 @@
+<div>
+  <a routerLink="/planets">Back to the planets list</a>
+</div>
+<div *ngIf="planet; then planetInfo else loading"></div>
+<ng-template #planetInfo>
+  <div header>
+    {{ planet.name }}
+  </div>
+  <div split>
+    <div main>
+      <app-resident-badge [id]="id" *ngFor="let id of residentIds">
+      </app-resident-badge>
+    </div>
+    <div sidebar>
+      <div property>
+        <label>Rotation period: </label>
+        <span>{{ planet.rotation_period }}</span>
+      </div>
+      <div property>
+        <label>Orbital period: </label>
+        <span>{{ planet.orbital_period }}</span>
+      </div>
+      <div property>
+        <label>Diameter: </label>
+        <span>{{ planet.diameter }}</span>
+      </div>
+      <div property>
+        <label>Climate: </label>
+        <span>{{ planet.climate }}</span>
+      </div>
+      <div property>
+        <label>Gravity: </label>
+        <span>{{ planet.gravity }}</span>
+      </div>
+      <div property>
+        <label>Terrain: </label>
+        <span>{{ planet.terrain }}</span>
+      </div>
+      <div property>
+        <label>Surface water?: </label>
+        <span>{{ planet.surface_water }}</span>
+      </div>
+      <div property>
+        <label>Population: </label>
+        <span>{{ planet.population }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loading>
+  Loading...
+</ng-template>

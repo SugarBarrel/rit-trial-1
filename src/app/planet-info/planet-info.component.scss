@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+}
+[header] {
+}
+[split] {
+  display: flex;
+  flex-flow: row nowrap;
+}
+[main] {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-width: 400px;
+  gap: 0.5rem;
+}
+[sidebar] {
+  display: flex;
+  flex-flow: column nowrap;
+}
+[property] {
+  & > label { font-weight: bold; }
+}

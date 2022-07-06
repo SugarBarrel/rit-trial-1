@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #00000011;
+  & > div { width: 100%; }
+}
+[title] {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-decoration: none;
+}
+[properties] {
+  display: flex;
+  flex-flow: column nowrap;
+}
+[property] {
+  & > label { font-weight: bold; }
+}

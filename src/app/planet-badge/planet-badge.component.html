@@ -1,0 +1,47 @@
+<div *ngIf="planet; then planetInfo else loading"></div>
+<ng-template #planetInfo>
+  <div>
+    <a [routerLink]="'/planets/' + id" title>{{ planet.name }}</a>
+  </div>
+  <div properties>
+    <div property>
+      <label>Rotation period: </label>
+      <span>{{ planet.rotation_period }}</span>
+    </div>
+    <div property>
+      <label>Orbital period: </label>
+      <span>{{ planet.orbital_period }}</span>
+    </div>
+    <div property>
+      <label>Diameter: </label>
+      <span>{{ planet.diameter }}</span>
+    </div>
+    <div property>
+      <label>Climate: </label>
+      <span>{{ planet.climate }}</span>
+    </div>
+    <div property>
+      <label>Gravity: </label>
+      <span>{{ planet.gravity }}</span>
+    </div>
+    <div property>
+      <label>Terrain: </label>
+      <span>{{ planet.terrain }}</span>
+    </div>
+    <div property>
+      <label>Surface water?: </label>
+      <span>{{ planet.surface_water }}</span>
+    </div>
+    <div property>
+      <label>Population: </label>
+      <span>{{ planet.population }}</span>
+    </div>
+    <div property>
+      <label>Film characters: </label>
+      <span>{{ planet.residents.length }}</span>
+    </div>
+  </div>
+</ng-template>
+<ng-template #loading>
+  Loading...
+</ng-template>
