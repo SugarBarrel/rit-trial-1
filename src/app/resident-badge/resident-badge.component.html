@@ -40,9 +40,7 @@
       <div property>
         <label>Homeworld: </label>
         <span *ngIf="homeworld.value">
-          <a [routerLink]="'/planets/' + homeworld.id">
-            {{ homeworld.value?.name }}
-          </a>
+          {{ homeworld.value?.name }}
         </span>
       </div>
     </div>

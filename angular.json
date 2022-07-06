@@ -83,6 +83,9 @@
             "browserTarget": "rit-trial-1:build"
           }
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
