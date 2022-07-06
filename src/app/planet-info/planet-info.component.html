@@ -8,7 +8,13 @@
   </div>
   <div split>
     <div main>
-      <app-resident-badge [id]="id" *ngFor="let id of residentIds">
+      <select type="dropdown" defaultValue="any" (change)="setGenderFilter($event)">
+        <option value="any">Any</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="n/a">N/A</option>
+      </select>
+      <app-resident-badge [id]="id" [genderFilter]="genderFilter" *ngFor="let id of residentIds">
       </app-resident-badge>
     </div>
     <div sidebar>

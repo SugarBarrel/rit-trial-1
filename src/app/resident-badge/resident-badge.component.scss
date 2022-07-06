@@ -1,9 +1,12 @@
 :host {
-  display: flex;
-  flex-flow: column nowrap;
-  background-color: #00000011;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  display: contents;
+  & > div {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #00000011;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+  }
 }
 [title] {
   font-size: 1.2rem;

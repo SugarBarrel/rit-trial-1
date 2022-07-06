@@ -12,6 +12,7 @@ import { extract_id } from '../util';
 export class ResidentBadgeComponent implements OnInit {
 
   @Input() public id: number = 0;
+  @Input() public genderFilter: string | null = null;
   public residentObs: Observable<ResidentEntry> = null!;
   public resident: ResidentEntry['value'] | null;
   public homeworldObs: Observable<PlanetEntry> = null!;

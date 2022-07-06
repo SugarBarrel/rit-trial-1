@@ -1,51 +1,55 @@
-<div *ngIf="resident; then residentInfo else loading"></div>
+<div *ngIf="resident && (!genderFilter || resident.gender == genderFilter); then residentInfo else loading"></div>
 <ng-template #residentInfo>
-  <div title>
-    {{ resident.name }}
-  </div>
   <div>
-    <div property>
-      <label>Height: </label>
-      <span>{{ resident.height }}</span>
+    <div title>
+      {{ resident.name }}
     </div>
-    <div property>
-      <label>Mass: </label>
-      <span>{{ resident.mass }}</span>
-    </div>
-    <div property>
-      <label>Hair color: </label>
-      <span>{{ resident.hair_color }}</span>
-    </div>
-    <div property>
-      <label>Skin color: </label>
-      <span>{{ resident.skin_color }}</span>
-    </div>
-    <div property>
-      <label>Eye color: </label>
-      <span>{{ resident.eye_color }}</span>
-    </div>
-    <div property>
-      <label>Year of birth: </label>
-      <span>{{ resident.birth_year }}</span>
-    </div>
-    <div property>
-      <label>Gender: </label>
-      <span>{{ resident.gender }}</span>
-    </div>
-    <div property>
-      <label>Species: </label>
-      <span>{{ resident.species.join(", ") }}</span>
-    </div>
-    <div property>
-      <label>Homeworld: </label>
-      <span *ngIf="homeworld.value">
-        <a [routerLink]="'/planets/' + homeworld.id">
-          {{ homeworld.value?.name }}
-        </a>
-      </span>
+    <div>
+      <div property>
+        <label>Height: </label>
+        <span>{{ resident.height }}</span>
+      </div>
+      <div property>
+        <label>Mass: </label>
+        <span>{{ resident.mass }}</span>
+      </div>
+      <div property>
+        <label>Hair color: </label>
+        <span>{{ resident.hair_color }}</span>
+      </div>
+      <div property>
+        <label>Skin color: </label>
+        <span>{{ resident.skin_color }}</span>
+      </div>
+      <div property>
+        <label>Eye color: </label>
+        <span>{{ resident.eye_color }}</span>
+      </div>
+      <div property>
+        <label>Year of birth: </label>
+        <span>{{ resident.birth_year }}</span>
+      </div>
+      <div property>
+        <label>Gender: </label>
+        <span>{{ resident.gender }}</span>
+      </div>
+      <div property>
+        <label>Species: </label>
+        <span>{{ resident.species.join(", ") }}</span>
+      </div>
+      <div property>
+        <label>Homeworld: </label>
+        <span *ngIf="homeworld.value">
+          <a [routerLink]="'/planets/' + homeworld.id">
+            {{ homeworld.value?.name }}
+          </a>
+        </span>
+      </div>
     </div>
   </div>
 </ng-template>
 <ng-template #loading>
-  Loading...
+  <div *ngIf="!genderFilter">
+    Loading...
+  </div>
 </ng-template>

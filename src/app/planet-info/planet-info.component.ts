@@ -18,6 +18,13 @@ export class PlanetInfoComponent implements OnInit {
   public planetObs: Observable<PlanetEntry> = null!;
   public planet: PlanetEntry['value'] | null;
   public residentIds: number[] = [];
+  public genderFilter: string | null = null;
+  setGenderFilter(e: Event) {
+    let value = (e.target as any).value;
+    if (value == 'any') value = null;
+    console.log(`Set gender filter to ${value}`);
+    this.genderFilter = value;
+  }
 
   constructor(
     private route: ActivatedRoute,
